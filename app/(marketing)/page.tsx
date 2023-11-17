@@ -52,7 +52,9 @@ const MarketingPage = (props: Props) => {
         accomplish it all with taskade.
       </div>
 
-      <Button className="mt-6" size={"lg"}>
+      <Button
+        className="mt-6 bg-amber-200 hover:bg-amber-300 text-black"
+        size={"lg"}>
         <Link href={"/sign-up"}>Get Taskade for free.</Link>
       </Button>
     </div>

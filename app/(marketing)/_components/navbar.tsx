@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
           <Button
             size={"sm"}
             asChild
-            className="border-slate-700 bg-white text-black">
+            className="bg-amber-200 text-black hover:bg-amber-300">
             <Link href={"/sign-up"}>Get Taskade for free</Link>
           </Button>
         </div>
