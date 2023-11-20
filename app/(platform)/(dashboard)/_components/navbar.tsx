@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { PlusIcon } from "lucide-react";
+import MobileSidebar from "./mobileSiudebar";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ const DashboardNavbar = (props: Props) => {
   return (
     <nav className="fixed z-50 px-4 top-0 w-full h-14 border-b border-slate-600 shadow-sm bg-slate-900 flex items-center">
       {/* Mobile sidebar */}
+      <MobileSidebar />
       <div className="flex items-center gap-x-4">
         <div className="hidden md:flex">
           <Logo />
