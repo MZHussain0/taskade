@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import {
   ActivityIcon,
@@ -30,7 +31,7 @@ interface NavItemProps {
   onExpand: (id: string) => void;
 }
 
-const NavItem = ({
+export const NavItem = ({
   isExpanded,
   isActive,
   organization,
@@ -108,4 +109,13 @@ const NavItem = ({
   );
 };
 
-export default NavItem;
+NavItem.Skeleton = function SkeletonNavItem() {
+  return (
+    <div className="flex items-center gap-x-2">
+      <div className="w-10 h-10 rounded-sm relative shrink-0 ">
+        <Skeleton className="h-full bg-slate-900" />
+      </div>
+      <Skeleton className="w-full h-10 bg bg-slate-900" />
+    </div>
+  );
+};

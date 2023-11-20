@@ -7,7 +7,7 @@ import { Accordion } from "@radix-ui/react-accordion";
 import { PlusIcon } from "lucide-react";
 import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
-import NavItem, { Organization } from "./navItem";
+import { NavItem, Organization } from "./navItem";
 
 type Props = {
   storageKey?: string;
@@ -43,10 +43,23 @@ const Sidebar = ({ storageKey = "t-sidebar-state" }: Props) => {
   };
 
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading)
-    return <Skeleton />;
+    return (
+      <>
+        <div className="flex items-center justify-between">
+          <Skeleton className="h-10 w-[50%] bg-slate-900" />
+          <Skeleton className="h-10 w-10 bg-slate-900" />
+        </div>
+
+        <div className="space-y-2 pt-2">
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+        </div>
+      </>
+    );
   return (
     <>
-      <div className="font-medium text-xs flex items-center mb-1">
+      <div className="font-medium text-xs flex items-center mb-1 ">
         <span className="pl-4">Workspaces</span>
         <Button
           asChild
